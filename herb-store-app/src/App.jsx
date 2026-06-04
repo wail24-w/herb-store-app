@@ -10,7 +10,7 @@ import SettingsPage from './pages/SettingsPage'
 export default function App() {
   return (
     <BrowserRouter>
-      <div className="max-w-lg mx-auto relative min-h-screen">
+      <div className="relative min-h-screen w-full">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/products" element={<ProductsPage />} />

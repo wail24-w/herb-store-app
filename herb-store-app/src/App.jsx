@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 import BottomNav from './components/shared/BottomNav'
 import HomePage from './pages/HomePage'
 import ProductsPage from './pages/ProductsPage'
@@ -9,7 +9,7 @@ import SettingsPage from './pages/SettingsPage'
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className="relative min-h-screen w-full">
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -21,6 +21,6 @@ export default function App() {
         </Routes>
         <BottomNav />
       </div>
-    </BrowserRouter>
+    </HashRouter>
   )
 }

@@ -25,7 +25,7 @@ export default function SettingsPage() {
         <h1 className="text-lg font-bold">الإعدادات</h1>
       </div>
 
-      <div className="p-4 pb-24 max-w-lg mx-auto space-y-4">
+      <div className="p-4 pb-24 w-full space-y-4">
         {/* Grok API */}
         <div className="card">
           <h2 className="font-semibold text-gray-700 mb-1 flex items-center gap-2">

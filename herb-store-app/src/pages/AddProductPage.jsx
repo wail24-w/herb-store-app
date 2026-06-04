@@ -88,7 +88,7 @@ export default function AddProductPage() {
         </div>
       </div>
 
-      <div className="p-4 pb-24 max-w-lg mx-auto">
+      <div className="p-4 pb-24 w-full">
         {/* نوع المنتج */}
         <div className="card mb-4">
           <p className="text-sm text-gray-500 mb-3">نوع المنتج</p>

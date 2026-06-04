@@ -46,7 +46,7 @@ export default function HomePage() {
         </div>
       </div>
 
-      <div className="p-4 pb-24 max-w-lg mx-auto -mt-2">
+      <div className="p-4 pb-24 w-full -mt-2">
         {/* Quick actions */}
         <div className="grid grid-cols-2 gap-3 mb-6">
           {quickActions.map(a => (

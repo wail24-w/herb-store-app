@@ -17,10 +17,15 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: cd herb-store-app && npm install
-      - run: cd herb-store-app && npm run build
-      - uses: actions/upload-pages-artifact@v3
+      - name: Install & Build
+        run: |
+          cd herb-store-app
+          npm install
+          npm run build
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
           path: herb-store-app/dist
-      - id: deployment
+      - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4

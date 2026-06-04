@@ -125,3 +125,29 @@ export async function importData(file) {
     if (data.saleItems) await db.saleItems.bulkPut(data.saleItems)
   })
 }
+
+// ─── Auto backup to localStorage ─────────────────────────────────────────────
+
+export async function autoBackup() {
+  try {
+    const products = await db.products.toArray()
+    localStorage.setItem('herb_backup_products', JSON.stringify(products))
+    localStorage.setItem('herb_backup_time', new Date().toISOString())
+    console.log('✅ نسخة احتياطية محفوظة:', products.length, 'منتج')
+  } catch (e) {
+    console.warn('backup error:', e)
+  }
+}
+
+export async function restoreFromBackup() {
+  try {
+    const raw = localStorage.getItem('herb_backup_products')
+    if (!raw) return 0
+    const products = JSON.parse(raw)
+    await db.products.bulkPut(products)
+    return products.length
+  } catch (e) {
+    console.warn('restore error:', e)
+    return 0
+  }
+}
